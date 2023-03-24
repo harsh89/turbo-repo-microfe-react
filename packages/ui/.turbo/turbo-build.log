@@ -1,0 +1,7 @@
+
+> ui@0.0.0 build /Users/harsharma/Desktop/Personal and Work/Experiments/turbo-repo-microfe-react/packages/ui
+> tsup src/index.tsx --format cjs --dts --external react
+
+sh: tsup: command not found
+ ELIFECYCLE  Command failed.
+ WARN   Local package.json exists, but node_modules missing, did you mean to install?
