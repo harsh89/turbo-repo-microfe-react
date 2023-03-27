@@ -2,6 +2,13 @@
 > ui@0.0.0 build /Users/harsharma/Desktop/Personal and Work/Experiments/turbo-repo-microfe-react/packages/ui
 > tsup src/index.tsx --format cjs --dts --external react
 
-sh: tsup: command not found
- ELIFECYCLE  Command failed.
- WARN   Local package.json exists, but node_modules missing, did you mean to install?
+CLI Building entry: src/index.tsx
+CLI Using tsconfig: tsconfig.json
+CLI tsup v5.12.9
+CLI Target: node12
+CJS Build start
+CJS ⚡️ Build success in 122ms
+CJS dist/index.js 1.32 KB
+DTS Build start
+DTS ⚡️ Build success in 319ms
+DTS dist/index.d.ts 233.00 B

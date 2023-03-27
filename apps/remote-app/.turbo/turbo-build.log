@@ -1,0 +1,28 @@
+
+> remote-app@0.1.0 build /Users/harsharma/Desktop/Personal and Work/Experiments/turbo-repo-microfe-react/apps/remote-app
+> webpack --config=config/webpack.prod.js
+
+assets by status 155 KiB [cached] 6 assets
+assets by path . 17 KiB
+  assets by path *.js 12.6 KiB
+    asset moduleEntry.js 6.21 KiB [emitted] [minimized] (name: Remote)
+    asset main.4070af21fb70a20b84af.js 5.78 KiB [emitted] [immutable] [minimized] (name: main)
+    asset 638.0b811d4e50378bdb3dcd.js 355 bytes [emitted] [immutable] [minimized]
+    asset 59.5b960350c38cb958009d.js 242 bytes [emitted] [immutable] [minimized]
+  asset favicon.ico 3.78 KiB [compared for emit]
+  asset index.html 704 bytes [emitted]
+runtime modules 35.1 KiB 22 modules
+built modules 158 KiB (javascript) 168 bytes (share-init) 168 bytes (consume-shared) [built]
+  javascript modules 158 KiB
+    modules by path ../../ 157 KiB 13 modules
+    modules by path ./src/*.js 1.11 KiB 4 modules
+    container entry 42 bytes [built] [code generated]
+  provide-module modules 168 bytes
+    provide shared module (default) react-dom@18.2.0 = ../../node_modules/.pnpm/react-dom@18.2.0_react@18.2.0/node_modules/react-dom/index.js 42 bytes [built] [code generated]
+    provide shared module (default) react@17.0.2 = ../../node_modules/.pnpm/react@17.0.2/node_modules/react/index.js 42 bytes [built] [code generated]
+    + 2 modules
+  consume-shared-module modules 168 bytes
+    modules by path consume shared module (default) react@^18.2.0 (singleton) (fallback: ../../node_modules/.pnpm/ 84 bytes 2 modules
+    consume shared module (default) ui@* (strict) (fallback: ../../packages/ui/dist/index.js) 42 bytes [built] [code generated]
+    consume shared module (default) react-dom@^18.2.0 (singleton) (fallback: ../../node_modules/.pnpm/react-dom@18.2.0_react@18.2.0/node_modules/react-dom/index.js) 42 bytes [built] [code generated]
+webpack 5.75.0 compiled successfully in 2086 ms

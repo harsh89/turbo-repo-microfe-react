@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkremote_app=self.webpackChunkremote_app||[]).push([[59],{59:(e,t,n)=>{n.r(t),n.d(t,{Button:()=>r,default:()=>a});var u=n(599),l=n.n(u),r=function(){return l().createElement("button",null,"Hello!")};const a=r}}]);
