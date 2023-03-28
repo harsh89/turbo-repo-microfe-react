@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run: sudo npm i -g pnpm
-      - run: pnpm install
-      - run: pnpm build
+      - run: sudo pnpm install
+      - run: sudo pnpm build
   deploy-to-s3:
     machine:
       image: circleci/classic:latest
