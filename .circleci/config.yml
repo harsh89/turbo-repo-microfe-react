@@ -20,6 +20,7 @@ jobs:
       - aws-s3/copy:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
+          aws-region: AWS_REGION
           to: AWS_S3_ID
           install-aws-cli: true 
           from: apps/remote-app/dist/
