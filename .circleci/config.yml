@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: sudo npm i -g pnpm
+      - run: pnpm install
       - run: pnpm build
   deploy-to-s3:
     machine:
