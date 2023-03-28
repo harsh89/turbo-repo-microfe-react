@@ -20,6 +20,9 @@ jobs:
       - aws-s3/copy:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400
           to: 's3://turbo-micro-fe-bucket'
           install-aws-cli: true
           from: apps/remote-app/dist/
