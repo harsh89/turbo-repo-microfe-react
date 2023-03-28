@@ -1,20 +1,30 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
-workflows:
-  test:
-    jobs:
-      - test
+  aws-s3: circleci/aws-s3@3.1.1
 jobs:
-  test:
-    docker:
-      - image: cimg/node:lts
+  test-and-build:
+    executor:
+      name: node/default
     steps:
       - checkout
-      - node/install-packages:
-      - run:
-        command: npm i -g pnpm
-      - run:
-        command: pnpm build
-      - run:
-        command: pnpm test
+      - run: sudo npm i -g pnpm
+      - run: pnpm build
+  deploy-to-s3:
+    machine:
+      image: circleci/classic:latest
+    steps:
+      - checkout
+      - aws-s3/copy:
+          aws-access-key-id: AWS_KEY_ID
+          aws-secret-access-key: AWS_KEY_VALUE
+          to: AWS_S3_ID
+          install-aws-cli: true 
+          from: apps/remote-app/dist/
+workflows:
+  build-and-deploy:
+    jobs:
+      - test-and-build
+      - deploy-to-s3:
+          requires:
+            - test-and-build
