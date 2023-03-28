@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: sudo npm i -g pnpm
       - run: sudo pnpm install
-      - run: sudo pnpm build
+      - run: sudo turbo build
   deploy-to-s3:
     machine:
       image: circleci/classic:latest
