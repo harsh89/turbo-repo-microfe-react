@@ -11,18 +11,24 @@ jobs:
       - run: sudo npm i -g pnpm
       - run: sudo pnpm install --no-cache
       - run: sudo pnpm build --no-cache
+      - persist_to_workspace:
+        root: ~/
+        paths:
+          - project/build
   deploy-to-s3:
     docker:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
       - checkout
+      - attach_workspace:
+        at: ~/
       - aws-s3/sync:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: /remote-app/dist/
+          from: build/remote-app/dist/
 workflows:
   build-and-deploy:
     jobs:
