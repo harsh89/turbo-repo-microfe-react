@@ -11,7 +11,10 @@ jobs:
       - checkout
       - run: ls
       - run: sudo npm i -g pnpm
-      - run: sudo pnpm install --no-cache
+      - run: 
+          command: sudo pnpm install --no-cache
+          environment:
+            PRODUCTION_DOMAIN: turbo-micro-fe-bucket.s3.us-east-1.amazonaws.com
       - run: sudo pnpm build --no-cache
       - run: ls
       - persist_to_workspace:
