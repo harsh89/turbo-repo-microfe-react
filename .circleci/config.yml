@@ -6,15 +6,17 @@ jobs:
   test-and-build:
     executor:
       name: node/default
+    working_directory: /tmp
+
     steps:
       - checkout
       - run: sudo npm i -g pnpm
       - run: sudo pnpm install --no-cache
       - run: sudo pnpm build --no-cache
       - persist_to_workspace:
-          root: ~/
+          root: turbo-repo-microfe-react
           paths:
-            - project/build
+            - /apps/remote-app/dist
       - run: ls
   deploy-to-s3:
     docker:
@@ -23,13 +25,13 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/
+          at: turbo-repo-microfe-react/apps/remote-app/dist
       - aws-s3/sync:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: build/remote-app/dist/
+          from: turbo-repo-microfe-react/apps/remote-app/dist
 workflows:
   build-and-deploy:
     jobs:
