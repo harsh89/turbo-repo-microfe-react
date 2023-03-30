@@ -6,6 +6,7 @@ jobs:
   test-and-build:
     executor:
       name: node/default
+    working_directory: /project
 
     steps:
       - checkout
@@ -15,7 +16,7 @@ jobs:
       - run: sudo pnpm build --no-cache
       - run: ls
       - persist_to_workspace:
-          root: ~/
+          root: /final
           paths:
             - apps/remote-app/dist
   deploy-to-s3:
@@ -25,13 +26,13 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: ~/
+          at: /project/final/
       - aws-s3/sync:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: apps/remote-app/dist
+          from: /project/final/apps/remote-app/dist
 workflows:
   build-and-deploy:
     jobs:
