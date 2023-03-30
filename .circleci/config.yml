@@ -14,6 +14,10 @@ jobs:
       - run: sudo pnpm install --no-cache
       - run: sudo pnpm build --no-cache
       - run: ls
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - /apps/remote-app/dist
   deploy-to-s3:
     docker:
       # replace with your preferred image
@@ -21,13 +25,13 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: turbo-repo-microfe-react/apps/remote-app/dist
+          at: ~/
       - aws-s3/sync:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: turbo-repo-microfe-react/apps/remote-app/dist
+          from: /apps/remote-app/dist
 workflows:
   build-and-deploy:
     jobs:
