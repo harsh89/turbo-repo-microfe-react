@@ -19,4 +19,4 @@ built modules 144 KiB (javascript) 96 bytes (share-init) 84 bytes (consume-share
   remote-module modules 12 bytes (remote) 12 bytes (share-init)
     remote Remote/App 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
     remote Remote/Button 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
-webpack 5.75.0 compiled successfully in 1917 ms
+webpack 5.75.0 compiled successfully in 1948 ms
