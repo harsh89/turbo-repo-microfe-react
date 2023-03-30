@@ -6,7 +6,7 @@ jobs:
   test-and-build:
     executor:
       name: node/default
-    working_directory: /project
+    working_directory: /tmp
 
     steps:
       - checkout
@@ -26,13 +26,13 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /project/final/
+          at: /tmp/final/
       - aws-s3/sync:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: /project/final/apps/remote-app/dist
+          from: /tmp/final/apps/remote-app/dist
 workflows:
   build-and-deploy:
     jobs:
