@@ -31,7 +31,7 @@ jobs:
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: remote-app/dist
+          from: apps/remote-app/dist
 workflows:
   build-and-deploy:
     jobs:
