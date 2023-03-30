@@ -17,7 +17,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - /apps/remote-app/dist
+            - apps/remote-app/dist
   deploy-to-s3:
     docker:
       # replace with your preferred image
@@ -31,7 +31,7 @@ jobs:
           aws-secret-access-key: AWS_KEY_VALUE
           to: 's3://turbo-micro-fe-bucket/remote-app/dist'
           install-aws-cli: true
-          from: /apps/remote-app/dist
+          from: apps/remote-app/dist
 workflows:
   build-and-deploy:
     jobs:
