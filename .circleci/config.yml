@@ -10,14 +10,15 @@ jobs:
 
     steps:
       - checkout
+      - run: ls
       - run: sudo npm i -g pnpm
       - run: sudo pnpm install --no-cache
       - run: sudo pnpm build --no-cache
+      - run: ls
       - persist_to_workspace:
           root: turbo-repo-microfe-react
           paths:
-            - /apps/remote-app/dist
-      - run: ls
+            - /
   deploy-to-s3:
     docker:
       # replace with your preferred image
