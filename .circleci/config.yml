@@ -15,7 +15,10 @@ jobs:
           command: sudo pnpm install --no-cache
           environment:
             PRODUCTION_DOMAIN: turbo-micro-fe-bucket.s3.us-east-1.amazonaws.com
-      - run: sudo pnpm build --no-cache
+      - run: 
+          command: sudo pnpm build --no-cache
+          environment:
+            PRODUCTION_DOMAIN: turbo-micro-fe-bucket.s3.us-east-1.amazonaws.com
       - run: ls
       - persist_to_workspace:
           root: apps
