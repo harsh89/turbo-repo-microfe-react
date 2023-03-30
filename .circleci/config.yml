@@ -6,7 +6,6 @@ jobs:
   test-and-build:
     executor:
       name: node/default
-    working_directory: /tmp
 
     steps:
       - checkout
