@@ -2,10 +2,11 @@
 > host-app@0.1.0 build /Users/harsharma/Desktop/Personal and Work/Experiments/turbo-repo-microfe-react/apps/host-app
 > webpack --config=config/webpack.prod.js
 
-assets by status 145 KiB [cached] 4 assets
-assets by path . 4.4 KiB
+assets by status 137 KiB [cached] 3 assets
+assets by path . 11.5 KiB
+  asset main.d55c90fe284362335f18.js 7.09 KiB [emitted] [immutable] [minimized] (name: main)
   asset favicon.ico 3.78 KiB [compared for emit]
-  asset index.html 631 bytes [compared for emit]
+  asset index.html 631 bytes [emitted] [compared for emit]
 runtime modules 19.8 KiB 13 modules
 orphan modules 1.51 KiB [orphan] 2 modules
 built modules 144 KiB (javascript) 96 bytes (share-init) 84 bytes (consume-shared) 12 bytes (remote) [built]
@@ -19,4 +20,4 @@ built modules 144 KiB (javascript) 96 bytes (share-init) 84 bytes (consume-share
   remote-module modules 12 bytes (remote) 12 bytes (share-init)
     remote Remote/App 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
     remote Remote/Button 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
-webpack 5.75.0 compiled successfully in 2085 ms
+webpack 5.75.0 compiled successfully in 2157 ms

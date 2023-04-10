@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkremote_app=self.webpackChunkremote_app||[]).push([[638],{638:(e,t,p)=>{p.r(t),p.d(t,{App:()=>c,default:()=>l});var r=p(599),a=p.n(r),n=p(434),c=function(){return a().createElement("div",null,"Hello from the Remote App",a().createElement(n.Link,{className:"App-link",href:"https://reactjs.org"},"React Docs"))};const l=c}}]);

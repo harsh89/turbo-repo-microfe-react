@@ -1,20 +1,54 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
-workflows:
-  test:
-    jobs:
-      - test
+  aws-s3: circleci/aws-s3@3.1.1
 jobs:
-  test:
-    docker:
-      - image: cimg/node:lts
+  test-and-build:
+    executor:
+      name: node/default
+
     steps:
       - checkout
-      - node/install-packages:
-      - run:
-        command: npm i -g pnpm
-      - run:
-        command: pnpm build
-      - run:
-        command: pnpm test
+      - run: ls
+      - run: sudo npm i -g pnpm
+      - run: 
+          command: sudo pnpm install --no-cache
+          environment:
+            PRODUCTION_DOMAIN: turbo-micro-fe-bucket.s3.us-east-1.amazonaws.com
+      - run: 
+          command: sudo pnpm build --no-cache
+          environment:
+            PRODUCTION_DOMAIN: turbo-micro-fe-bucket.s3.us-east-1.amazonaws.com
+      - run: ls
+      - persist_to_workspace:
+          root: apps
+          paths:
+            - remote-app/dist
+            - host-app/dist
+  deploy-to-s3:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - attach_workspace:
+          at: apps
+      - aws-s3/sync:
+          aws-access-key-id: AWS_KEY_ID
+          aws-secret-access-key: AWS_KEY_VALUE
+          to: 's3://turbo-micro-fe-bucket/remote-app/dist'
+          install-aws-cli: true
+          from: apps/remote-app/dist
+      - aws-s3/sync:
+          aws-access-key-id: AWS_KEY_ID
+          aws-secret-access-key: AWS_KEY_VALUE
+          to: 's3://turbo-micro-fe-bucket/host-app/dist'
+          install-aws-cli: true
+          from: apps/host-app/dist
+workflows:
+  build-and-deploy:
+    jobs:
+      - test-and-build
+      - deploy-to-s3:
+          requires:
+            - test-and-build
