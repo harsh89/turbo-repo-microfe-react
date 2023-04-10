@@ -42,7 +42,7 @@ jobs:
       - aws-s3/sync:
           aws-access-key-id: AWS_KEY_ID
           aws-secret-access-key: AWS_KEY_VALUE
-          to: 's3://turbo-micro-fe-bucket/'
+          to: 's3://turbo-micro-fe-bucket/host-app/dist'
           install-aws-cli: true
           from: apps/host-app/dist
 workflows:
