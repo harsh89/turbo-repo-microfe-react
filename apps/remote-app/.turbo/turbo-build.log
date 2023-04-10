@@ -22,4 +22,4 @@ built modules 143 KiB (javascript) 84 bytes (share-init) 84 bytes (consume-share
   consume-shared-module modules 84 bytes
     consume shared module (default) react@^18.2.0 (singleton) (fallback: ../../node_modules/.pnpm/react@18.2.0/node_modules/react/index.js) 42 bytes [built] [code generated]
     consume shared module (default) react-dom@^18.2.0 (singleton) (fallback: ../../node_modules/.pnpm/react-dom@18.2.0_react@18.2.0/node_modules/react-dom/index.js) 42 bytes [built] [code generated]
-webpack 5.75.0 compiled successfully in 1863 ms
+webpack 5.75.0 compiled successfully in 1911 ms
