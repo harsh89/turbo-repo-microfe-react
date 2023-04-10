@@ -29,7 +29,6 @@ export const App = () => (
      <RemoteButton />
    </RemoteWrapper>
    <br />
-   <a href="http://localhost:4000">Link to Remote App</a>
  </div>
 );
 export default App;
