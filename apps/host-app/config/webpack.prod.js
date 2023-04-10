@@ -37,7 +37,7 @@ const prodConfig = {
         new ModuleFederationPlugin({
             name: "Host",
             remotes: {
-              Remote: `Remote@turbo-micro-fe-bucket.s3.us-east-1.amazonaws.com/remote-app/dist/moduleEntry.js`,
+              Remote: `Remote@/remote-app/dist/moduleEntry.js`,
             },
             shared: {
               ...dependencies,

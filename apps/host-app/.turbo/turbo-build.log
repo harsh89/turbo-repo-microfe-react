@@ -2,11 +2,13 @@
 > host-app@0.1.0 build /Users/harsharma/Desktop/Personal and Work/Experiments/turbo-repo-microfe-react/apps/host-app
 > webpack --config=config/webpack.prod.js
 
-assets by status 137 KiB [cached] 3 assets
-assets by path . 11.5 KiB
-  asset main.d55c90fe284362335f18.js 7.09 KiB [emitted] [immutable] [minimized] (name: main)
-  asset favicon.ico 3.78 KiB [compared for emit]
-  asset index.html 631 bytes [emitted] [compared for emit]
+assets by path *.js 145 KiB
+  asset 730.6ec34b30a4679c6ecc74.js 130 KiB [emitted] [immutable] [minimized] (id hint: vendors) 1 related asset
+  asset main.1d60ebc633264f50070a.js 7.04 KiB [emitted] [immutable] [minimized] (name: main)
+  asset 983.bba01d1fa8b43d131cae.js 6.44 KiB [emitted] [immutable] [minimized] 1 related asset
+  asset 141.9ddca4cd39479bc3901a.js 1.01 KiB [emitted] [immutable] [minimized]
+asset favicon.ico 3.78 KiB [emitted]
+asset index.html 631 bytes [emitted]
 runtime modules 19.8 KiB 13 modules
 orphan modules 1.51 KiB [orphan] 2 modules
 built modules 144 KiB (javascript) 96 bytes (share-init) 84 bytes (consume-shared) 12 bytes (remote) [built]
@@ -20,4 +22,4 @@ built modules 144 KiB (javascript) 96 bytes (share-init) 84 bytes (consume-share
   remote-module modules 12 bytes (remote) 12 bytes (share-init)
     remote Remote/App 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
     remote Remote/Button 6 bytes (remote) 6 bytes (share-init) [built] [code generated]
-webpack 5.75.0 compiled successfully in 2157 ms
+webpack 5.75.0 compiled successfully in 1959 ms
